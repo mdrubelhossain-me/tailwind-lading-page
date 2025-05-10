@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1D4ED8',
-        secondary: '#9333EA',
-        accent: '#F59E0B',
+        primary: "#ea8309",
+        secondary: "#201f1f",
+        "secondary-bg": "f9f5f5",
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        primary: ["Poppins", "sans-serif"],
+        secondary: ["Roboto", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },
