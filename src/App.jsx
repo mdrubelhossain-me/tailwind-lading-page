@@ -1,12 +1,23 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
-      <h1 className='text-7xl text-primary font-bold'>Welcome to the Landing Page</h1>
-      <h1 className='text-7xl text-primary font-roboto font-bold'>Welcome to the Landing Page</h1>
-      <h1 className='text-7xl text-primary font-secondary font-bold'>Welcome to the Landing Page</h1>
-      <h1 className='text-7xl text-primary font-primary font-bold'>Welcome to the Landing Page</h1>
+       <nav className='bg-red-600'>
+          <ul className='flex space-x-3'>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+      <Outlet/>
     </div>
   );
 };
