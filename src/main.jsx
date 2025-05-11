@@ -3,6 +3,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/home/Home.jsx";
+import About from "./pages/about/About.jsx";
+import Contact from "./pages/contact/Contact.jsx";
+import Shop from "./pages/shop/Shop.jsx";
+
 // Importing necessary modules and components for the application
 const router = createBrowserRouter([
   {
@@ -11,15 +16,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Home</h1>,
+        element: <Home/>,
       },
       {
         path: "/about",
-        element: <h1>About</h1>,
+        element: <About/>,
       },
       {
         path: "/contact",
-        element: <h1>Contact</h1>,
+        element: <Contact/>,
+      },
+        {
+        path: "/shop",
+        element: <Shop/>,
       },
     ],
   },

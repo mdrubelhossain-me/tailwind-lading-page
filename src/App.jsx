@@ -1,12 +1,16 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div>
-      <Navbar/>
-      <Outlet/>
+      <Navbar />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 };
