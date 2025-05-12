@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Breadcrumb = ({ title, items = [], bgImage }) => {
   return (
-    <div className="relative h-[300px] sm:h-[350px] md:h-[400px] w-full overflow-hidden">
+    <div className="relative h-[330px] sm:h-[350px] md:h-[400px] w-full overflow-hidden">
       {/* Background Image */}
       {bgImage && (
         <img
@@ -22,7 +23,7 @@ const Breadcrumb = ({ title, items = [], bgImage }) => {
       {/* Title & Breadcrumb */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-4 space-y-2">
         {title && (
-          <h1 className="text-2xl sm:text-3xl font-semibold capitalize">
+          <h1 className="text-2xl sm:text-3xl font-semibold font-primary capitalize">
             {title}
           </h1>
         )}
@@ -35,12 +36,12 @@ const Breadcrumb = ({ title, items = [], bgImage }) => {
                 <li key={index} className="flex items-center">
                   {!isLast ? (
                     <>
-                      <a
-                        href={item.href}
+                      <Link
+                        to={item.href}
                         className="text-primary hover:underline capitalize"
                       >
                         {item.label}
-                      </a>
+                      </Link>
                       <span className="mx-2 text-gray-400">/</span>
                     </>
                   ) : (

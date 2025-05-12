@@ -1,5 +1,5 @@
 import React from "react";
-import HeroBg from "../../assets/images/bg-2.jpg";
+import Bg from "../../assets/images/bg-2.jpg";
 import Breadcrumb from "../../components/Breadcrumb";
 
 const Contact = () => {
@@ -8,10 +8,10 @@ const Contact = () => {
       {/* Breadcrumb Start */}
       <Breadcrumb
         title="Contact"
-        bgImage={HeroBg}
+        bgImage={Bg}
         items={[
-          { label: "Home", href: "/" },
-          { label: "Contact", href: "/contact" },
+          { label: "Home", href: "/" }, 
+          { label: "Contact" }
         ]}
       />
     </div>
