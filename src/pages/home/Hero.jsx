@@ -33,7 +33,7 @@ const Hero = () => {
               placeholder="Search furniture..."
               className="flex-grow px-4 py-2 text-black outline-none font-primary"
             />
-            <button className="bg-black text-white px-4 py-2 font-primary hover:bg-gray-800 transition">
+            <button className="bg-primary text-white px-4 py-2 font-primary hover:bg-gray-800 transition">
               <MagnifyingGlass size={32} />
             </button>
           </div>
@@ -41,7 +41,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom white blurred overlay */}
-      <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-white via-transparent to-transparent  pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-2/4 bg-gradient-to-t from-white via-transparent to-transparent  pointer-events-none" />
     </div>
   );
 };
