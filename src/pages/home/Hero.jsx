@@ -41,11 +41,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom white blurred overlay */}
-      <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-white via-transparent to-transparent blur-sm pointer-events-none" />
-    {/* Hover button for showing tooltip box */}
-    
-    
-
+      <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-white via-transparent to-transparent  pointer-events-none" />
     </div>
   );
 };

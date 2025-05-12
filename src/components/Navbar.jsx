@@ -66,7 +66,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="text-white px-6 py-5 relative font-primary">
+      <nav className="text-white px-4 py-5 relative font-primary">
         {/* Navbar container */}
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
