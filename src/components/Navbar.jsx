@@ -8,24 +8,32 @@ import {
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  // State for controlling mobile menu
   const [menuOpen, setMenuOpen] = useState(false);
+  // State for desktop category dropdown
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  // State for mobile category dropdown
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  // State to track scroll for navbar styling
   const [scrolled, setScrolled] = useState(false);
 
+  // Toggle mobile menu
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
+  // Toggle desktop dropdown menu
   const toggleDesktopDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-    setMobileDropdownOpen(false);
+    setMobileDropdownOpen(false); // Close mobile dropdown if open
   };
 
+  // Toggle mobile dropdown menu
   const toggleMobileDropdown = () => {
     setMobileDropdownOpen(!mobileDropdownOpen);
-    setDropdownOpen(false);
+    setDropdownOpen(false); // Close desktop dropdown if open
   };
 
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (event.target.closest(".desktop-dropdown") === null) {
@@ -40,6 +48,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Add scroll listener to apply background on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -58,7 +67,9 @@ const Navbar = () => {
       }`}
     >
       <nav className="text-white px-6 py-5 relative font-primary">
+        {/* Navbar container */}
         <div className="container mx-auto flex items-center justify-between">
+          {/* Logo */}
           <div className="text-xl font-bold">
             <NavLink to="/" className="font-primary">
               LOGO
@@ -91,6 +102,8 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
+
+            {/* Desktop Dropdown Menu */}
             <li className="relative cursor-pointer desktop-dropdown">
               <button
                 className="flex items-center gap-1 hover:text-gray-300 font-primary text-md"
@@ -148,6 +161,7 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
+
             <li className="hover:text-gray-300">
               <NavLink
                 to="/contact"
@@ -182,7 +196,8 @@ const Navbar = () => {
                 className="flex items-center gap-2 text-sm relative font-primary text-md"
               >
                 <ShoppingCartSimple size={24} />
-                <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
+                {/* Cart badge */}
+                <span className="absolute -top-1 -right-2 bg-primary text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
                   0
                 </span>
               </NavLink>
@@ -201,7 +216,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger Icon */}
           <div className="md:hidden">
             <button onClick={toggleMenu}>
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -215,12 +230,15 @@ const Navbar = () => {
             menuOpen ? "translate-x-0" : "-translate-x-full"
           } font-primary`}
         >
+          {/* Mobile Menu Header */}
           <div className="p-4 flex justify-between items-center border-b border-gray-700">
             <span className="text-lg font-bold font-primary">Menu</span>
             <button onClick={toggleMenu}>
               <X size={24} />
             </button>
           </div>
+
+          {/* Mobile Links */}
           <ul className="flex flex-col p-4 gap-4 text-base font-primary">
             <li onClick={closeMenu}>
               <NavLink
@@ -246,6 +264,8 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
+
+            {/* Mobile Dropdown Menu */}
             <li className="relative cursor-pointer mobile-dropdown">
               <button
                 onClick={toggleMobileDropdown}
@@ -300,6 +320,7 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
+
             <li onClick={closeMenu}>
               <NavLink
                 to="/contact"
@@ -318,7 +339,7 @@ const Navbar = () => {
                 className="flex items-center gap-2 text-sm relative font-primary text-md"
               >
                 <ShoppingCartSimple size={24} />
-                <span className="absolute -top-1 left-4 bg-red-500 text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
+                <span className="absolute -top-1 left-4 bg-primary text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
                   0
                 </span>
               </NavLink>
