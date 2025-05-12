@@ -1,9 +1,20 @@
 import React from 'react'
+import Bg from "../../assets/images/bg4.jpg";
+import Breadcrumb from "../../components/Breadcrumb";
+import { Phone, EnvelopeSimple, MapPin } from "@phosphor-icons/react";
 
 const Shop = () => {
   return (
     <div>
-      <h1>This is Shop</h1>
+        {/* Breadcrumb Start */}
+      <Breadcrumb
+        title="Shop"
+        bgImage={Bg}
+        items={[{ label: "Home", href: "/" }, { label: "Shop" }]}
+      />
+
+
+
     </div>
   )
 }
