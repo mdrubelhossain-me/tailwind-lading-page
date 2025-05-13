@@ -4,6 +4,14 @@ import { CheckCircle, ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
 const Experiences = () => {
+  // Dynamic Experience Points
+  const experiencePoints = [
+    "10+ years of industry experience",
+    "100+ successful client collaborations",
+    "Expertise in UI/UX, branding, and digital marketing",
+    "Client-centric approach with measurable results",
+  ];
+
   return (
     <div className="relative z-10 overflow-hidden py-20 font-primary">
       {/* Decorative Background Blur */}
@@ -22,24 +30,17 @@ const Experiences = () => {
               and creativity first to exceed client expectations.
             </p>
 
+            {/* Dynamic Experience Points */}
             <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <CheckCircle size={22} className="text-primary mt-1" />
-                <span>10+ years of industry experience</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle size={22} className="text-primary mt-1" />
-                <span>100+ successful client collaborations</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle size={22} className="text-primary mt-1" />
-                <span>Expertise in UI/UX, branding, and digital marketing</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle size={22} className="text-primary mt-1" />
-                <span>Client-centric approach with measurable results</span>
-              </li>
+              {experiencePoints.map((point, index) => (
+                <li key={index} className="flex items-center gap-2">
+                  <CheckCircle size={22} className="text-primary mt-1" />
+                  <span>{point}</span>
+                </li>
+              ))}
             </ul>
+
+            {/* More Info Link */}
             <div className="mt-8">
               <Link
                 to="#"
