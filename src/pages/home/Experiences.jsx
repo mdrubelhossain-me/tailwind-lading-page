@@ -1,6 +1,7 @@
 import React from "react";
 import HeroBg from "../../assets/images/hero.jpg";
-import { CheckCircle } from "@phosphor-icons/react";
+import { CheckCircle, ArrowRight } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 const Experiences = () => {
   return (
@@ -39,6 +40,15 @@ const Experiences = () => {
                 <span>Client-centric approach with measurable results</span>
               </li>
             </ul>
+            <div className="mt-8">
+              <Link
+                to="#"
+                className="font-primary text-md inline-flex gap-1 items-center text-primary border-b-[1px] border-transparent hover:border-primary transition duration-300"
+              >
+                <span>More Info</span>
+                <ArrowRight size={20} />
+              </Link>
+            </div>
           </div>
 
           {/* Right Side: Image */}
