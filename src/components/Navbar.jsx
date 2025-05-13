@@ -62,7 +62,7 @@ const Navbar = () => {
     <header
       className={`fixed top-0 right-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-800 bg-opacity-890 backdrop-blur-sm"
+          ? "bg-gray-800 bg-opacity-800 backdrop-blur-sm"
           : "bg-transparent"
       }`}
     >
@@ -239,7 +239,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Links */}
-          <ul className="flex flex-col p-4 gap-4 text-base font-primary">
+          <ul className="flex flex-col p-4 gap-4 text-base font-primary bg-gray-900 h-screen">
             <li onClick={closeMenu}>
               <NavLink
                 to="/"

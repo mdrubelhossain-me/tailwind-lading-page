@@ -31,7 +31,6 @@
     @apply mb-20;
 }
 
-.swiper-pagination {}
 
 .swiper-pagination-bullet {
     @apply w-[10px] h-[10px] bg-gray-300 opacity-100 mx-[6px] rounded-full transition-all duration-300 !important;
