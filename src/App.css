@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    @apply -mt-20 px-4 py-2 ring-1 ring-primary hover:text-white hover:bg-primary rounded-full bg-white text-black text-lg !important;
+}
+
+
+/* Custom Swiper Pagination Styling */
+.swiper-slide {
+    @apply mb-20;
+}
+
+.swiper-pagination {}
+
+.swiper-pagination-bullet {
+    @apply w-[10px] h-[10px] bg-gray-300 opacity-100 mx-[6px] rounded-full transition-all duration-300 !important;
+}
+
+/* Active Pagination Bullet */
+.swiper-pagination-bullet-active {
+    @apply w-6 bg-primary rounded-full !important;
+}
+
+/* Custom Styling for Pagination Bullets */
+.swiper-pagination-bullet {
+    @apply mb-4 ring-1 ring-primary hover:text-white hover:bg-primary rounded-full bg-white text-black text-lg transition-all duration-300 ease-in-out;
+}
