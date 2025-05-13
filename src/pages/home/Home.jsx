@@ -3,6 +3,7 @@ import Hero from './Hero'
 import ChooseUs from './ChooseUs'
 import Products from '../shop/Products'
 import Experiences from './Experiences'
+import Materials from './Materials'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <ChooseUs/>
         <Products title="Customer Favorites You'll Love Most"/>
         <Experiences/>
+        <Materials/>
       
     </div>
   )

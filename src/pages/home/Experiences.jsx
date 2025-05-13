@@ -20,18 +20,23 @@ const Experiences = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
           {/* Left Side: Text Content */}
-          <div className="md:w-1/2 space-y-6">
-            <h2 className="text-4xl font-bold text-secondary">
-              Our Experiences
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              With years of dedication, we've mastered the art of delivering
-              outstanding experiences. From concept to execution, we put quality
-              and creativity first to exceed client expectations.
+          <div className="md:w-1/2 ">
+            <p className="text-sm text-primary font-medium uppercase tracking-wider mb-2">
+              Professional Experience
             </p>
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold text-secondary">
+                Our Experiences
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                With years of dedication, we've mastered the art of delivering
+                outstanding experiences. From concept to execution, we put
+                quality and creativity first to exceed client expectations.
+              </p>
+            </div>
 
             {/* Dynamic Experience Points */}
-            <ul className="space-y-3">
+            <ul className="space-y-3 mt-6">
               {experiencePoints.map((point, index) => (
                 <li key={index} className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-primary mt-1" />
