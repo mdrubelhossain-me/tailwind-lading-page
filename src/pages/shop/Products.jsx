@@ -6,14 +6,14 @@ import { ArrowRight } from "@phosphor-icons/react";
 const Products = ({ title }) => {
   const [filteredProducts, setFilteredProducts] = useState(productsData);
   const [activeCategory, setActiveCategory] = useState("All");
-  const [showAll, setShowAll] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(4); // at starting 4 products
 
   const categories = ["All", "Sofa", "Bed", "Chair", "Almari"];
 
   // Handle category filtering
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
-    setShowAll(false); // category change then again show 4 products
+    setVisibleCount(4); // change category then 4 products
     if (category === "All") {
       setFilteredProducts(productsData);
     } else {
@@ -24,10 +24,13 @@ const Products = ({ title }) => {
     }
   };
 
-  // কটা প্রোডাক্ট দেখাবে সেটা নির্ধারণ
-  const displayedProducts = showAll
-    ? filteredProducts
-    : filteredProducts.slice(0, 4);
+  // how many products will show
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
+
+  // View More handler
+  const handleViewMore = () => {
+    setVisibleCount((prev) => prev + 4);
+  };
 
   return (
     <div className="relative z-10">
@@ -66,10 +69,10 @@ const Products = ({ title }) => {
         </div>
 
         {/* View More Button */}
-        {!showAll && filteredProducts.length > 4 && (
+        {visibleCount < filteredProducts.length && (
           <div className="mt-10 flex justify-center">
             <button
-              onClick={() => setShowAll(true)}
+              onClick={handleViewMore}
               className="flex gap-1 items-center px-6 py-2 bg-primary text-white text-sm font-primary rounded-full shadow hover:bg-secondary transition duration-300"
             >
               <span>View More</span>
