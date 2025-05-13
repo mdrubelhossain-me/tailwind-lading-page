@@ -1,7 +1,6 @@
 import React from "react";
 import Bg from "../../assets/images/bg4.jpg";
 import Breadcrumb from "../../components/Breadcrumb";
-import { Phone, EnvelopeSimple, MapPin } from "@phosphor-icons/react";
 import Products from "./Products";
 
 const Shop = () => {

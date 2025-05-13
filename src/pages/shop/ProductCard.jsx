@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ShoppingCartSimple } from "@phosphor-icons/react";
 
 const ProductCard = ({ product }) => {
   const fullStars = Math.floor(product.rating);
@@ -28,8 +29,8 @@ const ProductCard = ({ product }) => {
                   <svg
                     key={index}
                     className="rating-icon"
-                    width="14"
-                    height="14"
+                    width="12"
+                    height="12"
                     viewBox="0 0 22 21"
                     stroke="#ED9615"
                     fill="none"
@@ -47,8 +48,8 @@ const ProductCard = ({ product }) => {
                   <svg
                     key={index}
                     className="rating-icon"
-                    width="14"
-                    height="14"
+                    width="12"
+                    height="12"
                     viewBox="0 0 22 21"
                     stroke="#ED9615"
                     fill="none"
@@ -70,8 +71,8 @@ const ProductCard = ({ product }) => {
                   <svg
                     key={index}
                     className="rating-icon"
-                    width="14"
-                    height="14"
+                    width="12"
+                    height="12"
                     viewBox="0 0 22 21"
                     stroke="#ED9615"
                     fill="none"
@@ -95,9 +96,11 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Add to Cart */}
-        <button className="mt-4 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition">
-          Add to Cart
-        </button>
+        <div className="flex justify-end">
+          <button className="mt-4 px-1 py-1 bg-primary text-white rounded-full hover:bg-primary-dark group hover:bg-secondary transition duration-200">
+            <ShoppingCartSimple size={16} className="group-hover:text-white" />
+          </button>
+        </div>
       </div>
     </div>
   );

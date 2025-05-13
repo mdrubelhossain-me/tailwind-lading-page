@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import productsData from "../../utils/products";
 import ProductCard from "../shop/ProductCard";
+import { ArrowRight } from "@phosphor-icons/react";
 
 const Products = ({ title }) => {
   const [filteredProducts, setFilteredProducts] = useState(productsData);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [showAll, setShowAll] = useState(false);
 
   const categories = ["All", "Sofa", "Bed", "Chair", "Almari"];
 
   // Handle category filtering
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
+    setShowAll(false); // category change then again show 4 products
     if (category === "All") {
       setFilteredProducts(productsData);
     } else {
@@ -20,6 +23,11 @@ const Products = ({ title }) => {
       setFilteredProducts(filtered);
     }
   };
+
+  // কটা প্রোডাক্ট দেখাবে সেটা নির্ধারণ
+  const displayedProducts = showAll
+    ? filteredProducts
+    : filteredProducts.slice(0, 4);
 
   return (
     <div className="relative z-10">
@@ -52,10 +60,23 @@ const Products = ({ title }) => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:px-4 2xl:px-0">
-          {filteredProducts.map((product) => (
+          {displayedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+
+        {/* View More Button */}
+        {!showAll && filteredProducts.length > 4 && (
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="flex gap-1 items-center px-6 py-2 bg-primary text-white text-sm font-primary rounded-full shadow hover:bg-secondary transition duration-300"
+            >
+              <span>View More</span>
+              <ArrowRight size={24} />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
